@@ -18,5 +18,4 @@ function gmailData() {
 
 function clearLogs() {
   Logger.clear();
-  // test push
 }
