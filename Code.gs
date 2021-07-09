@@ -13,6 +13,7 @@ function gmailData() {
    
   for (var t=0; t<threads.length; t++) {
     sheet.appendRow([threads[t].getLastMessageDate(), threads[t].getFirstMessageSubject()]);
+    GmailApp.markMessageRead(threads[t].getMessages()[0]);
   }
 }
 
