@@ -3,7 +3,7 @@ function onOpen() {
   ui.createMenu('Get Domains details')
   .addItem('Start', 'gmailData')
   .addSeparator()
-  .addItem('Clear', 'clearLogs')
+  // .addItem('Clear', 'clearLogs')
   .addToUi();
 }
 
@@ -17,6 +17,6 @@ function gmailData() {
   }
 }
 
-function clearLogs() {
-  Logger.clear();
-}
+// function clearLogs() {
+//   Logger.clear();
+// }
