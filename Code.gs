@@ -3,13 +3,14 @@ function onOpen() {
   ui.createMenu('Get Domains details')
   .addItem('Start', 'gmailData')
   .addSeparator()
-  // .addItem('Clear', 'clearLogs')
+  .addItem('Clear', 'clearLogs')
   .addToUi();
 }
 
 function gmailData() {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("non-zap");
-  var threads = GmailApp.search("is:unread in:<lableName>", 0,500);
+  // Logger.log(sheet);
+  var threads = GmailApp.search("is:unread in:amazon-aws-domainrenewals", 0,500);
    
   for (var t=0; t<threads.length; t++) {
     sheet.appendRow([threads[t].getLastMessageDate(), threads[t].getFirstMessageSubject()]);
@@ -17,6 +18,6 @@ function gmailData() {
   }
 }
 
-// function clearLogs() {
-//   Logger.clear();
-// }
+function clearLogs() {
+  Logger.clear();
+}
